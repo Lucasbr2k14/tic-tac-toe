@@ -1,0 +1,36 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+#board {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 470px;
+  height: 470px;
+}
+
+.cell {
+  font-family: "Permanent Marker", cursive;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-width: 10px;
+  border-radius: 5px;
+  line-height: 100px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 100px;
+  display: grid;
+  align-items: center;
+}
