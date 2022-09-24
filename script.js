@@ -51,6 +51,7 @@ class Game {
     if (!this.board[cell]) {
       this.#write(element, cell);
       if (this.#VerifyWin()) return this.#winner();
+      if (this.#verifiGameOver()) return;
       this.#changePlayer();
       this.title.innerText = `Vez de ${this.player}`;
     }
@@ -83,6 +84,21 @@ class Game {
       ) {
         return true;
       }
+    }
+  }
+
+  #verifiGameOver() {
+    let quant = 0;
+    this.board.forEach((value) => {
+      if (value) {
+        quant += 1;
+      }
+    });
+    if (quant == 9) {
+      this.title.innerText = "Deu velha";
+      this.#removeEventListnersCells();
+      console.log(quant);
+      return 1;
     }
   }
 }
