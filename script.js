@@ -1,3 +1,4 @@
+
 class Game {
   constructor() {
     this.player = "X";
@@ -15,12 +16,13 @@ class Game {
   }
 
   constructGame() {
+    this.gameOver = false;
     this.boardGame = document.querySelector("#board");
     this.title = document.querySelector("#sub_title");
     this.title.innerText = `Press play`;
     this.boardGame.innerHTML = "";
     this.board = new Array(9).fill("");
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < this.board.length; i++) {
       board.innerHTML += `<div id="${i}" class="cell"></div>`;
     }
   }
@@ -97,11 +99,12 @@ class Game {
     if (quant == 9) {
       this.title.innerText = "Deu velha";
       this.#removeEventListnersCells();
-      console.log(quant);
       return 1;
     }
   }
 }
+
+
 
 const game = new Game();
 game.constructGame();
